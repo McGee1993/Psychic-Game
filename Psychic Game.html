@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+    <h1>The Psychic Game</h1>
+    <p>Guess what letter I'm thinking of</p>
+    <p id="wins-text"></p>
+    <p id="losses-text"></p>
+    <p id="guesses left-text"></p>
+    <p id="your guesses so far-text"></p>
+    </div>
+
+    <script type="text/javascript">
+   
+    var computerChoises = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+    
+   
+
+    var wins = 0;
+    var losses = 0;
+    var guesses = 12;
+    var guessesLeft  = 12;
+    var guessesFar = 0;
+
+    var winsText = document.getElementById("wins-text")
+    var lossesText = document.getElementById("losses-text")
+    var guessesLeft = document.getElementById("guesses left-text")
+    var guessesFar = document.getElementById("your guesses so far-text")
+
+    document.onkeyup = function(event) {
+        var userGuess = event.key;
+        
+        var computerGuesses = computerChoises[Math.floor(Math.random() * computerChoises.length)];
+     
+     
+     
+    if ((userGuess === "a") || (userGuess === "b") || (userGuess === "c") || (userGuess === "d") || (userGuess === "e") || (userGuess ==="f") || (userGuess ==="g") || (userGuess ==="h") || (userGuess === "i") || (userGuess === "j") || (userGuess === "k") || (userGuess === "l") || (userGuess === "m") || (userGuess === "n") || (userGuess === "o") || (userGuess === "p") || (userGuess === "q") || (userGuess === "r") || (userGuess === "s") || (userGuess === "t") || (userGuess === "u") || (userGuess === "v") || (userGuess === "w") || (userGuess === "x") || (userGuess === "y") || (userGuess === "z")) {
+        if (userGuess === computerChoises) {
+            wins++;
+        } else if (
+            losses++ && guessesLeft-- && guessesFar++);
+    
+        
+        
+       
+        winsText.textContent = "wins: " + wins;
+        lossesText.textContent = "losses: " + losses;
+        guessesLeft.textContent = "guesses left:" + guessesLeft;
+        guessesFar.textContent = "your guesses so far:" + guessesFar;
+    }
+    }
+
+
+
+    </script>
+</body>
+</html>
